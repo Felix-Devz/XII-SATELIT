@@ -73,6 +73,13 @@ body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Cera";
+    src: url("fonts/cera-pro-black.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* =========================================================
    SPACE BACKGROUND — nebula + starfield + shooting stars
@@ -524,7 +531,7 @@ nav.scrolled {
     color: white;
     text-decoration: none;
 
-    font-family: "Sugo", sans-serif;
+    font-family: "Cera", sans-serif;
     font-size: 18px;
 
     transition: color 0.3s ease;
@@ -1245,7 +1252,7 @@ nav.scrolled {
 
     color: #7fa8ff;
 
-    font-family: "Sugo", sans-serif;
+    font-family: "Cera", sans-serif;
     font-size: 14px;
 }
 
