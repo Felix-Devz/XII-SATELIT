@@ -2492,13 +2492,19 @@ nav.scrolled {
 ===================================================== */
 
 .footer {
-    background-color: #140849;
     height: 100px;
     position: relative;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    background: rgba(20, 8, 73, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* LOGO KIRI */
