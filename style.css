@@ -619,7 +619,7 @@ nav.scrolled {
 ========================================================= */
 
 .a-navbar.active {
-    color: cyan;
+    color: #2864dc;
 }
 
 .a-navbar.active::after {
@@ -657,7 +657,7 @@ nav.scrolled {
     width: 50%;
     margin-left: 30px;
 
-    color: cyan;
+    color: #2864dc;
 
     font-family: "Garet", sans-serif;
     font-size: 50px;
@@ -679,7 +679,7 @@ nav.scrolled {
 ========================================================= */
 
 #text {
-    color: cyan;
+    color: #2864dc;
 }
 
 .cursor {
@@ -896,7 +896,7 @@ nav.scrolled {
 }
 
 .tentang-header h1 span {
-    color: #7fa8ff;
+    color: #2864dc;
 }
 
 .tentang-header p {
@@ -975,6 +975,7 @@ nav.scrolled {
     border-radius: 50%;
 
     background: rgba(76, 41, 158, 0.25);
+    color: #2864dc;
     border: 1px solid rgba(124, 58, 237, 0.3);
 
     font-size: 25px;
@@ -1063,7 +1064,7 @@ nav.scrolled {
 }
 
 .anggota-header h1 span {
-    color: #7fa8ff;
+    color: #2864dc;
 }
 
 .anggota-header p {
@@ -1333,7 +1334,7 @@ nav.scrolled {
 }
 
 .jadwal-header h1 span {
-    color: #8f7bff;
+    color: #2864dc;
 }
 
 .jadwal-header p {
@@ -1562,7 +1563,7 @@ nav.scrolled {
 }
 
 .galeri-header h1 .momen {
-    color: #8f7bff;
+    color: #2864dc;
 }
 
 .galeri-header p {
@@ -1684,7 +1685,7 @@ nav.scrolled {
 }
 
 .statistik-header h1 span {
-    color: #7fa8ff;
+    color: #2864dc;
 }
 
 .statistik-header p {
@@ -1830,7 +1831,7 @@ nav.scrolled {
 }
 
 .contact-header h1 span {
-    color: #7fa8ff;
+    color: #2864dc;
 }
 
 .contact-header p {
