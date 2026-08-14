@@ -1023,6 +1023,57 @@ nav.scrolled {
     line-height: 1.8;
 }
 
+/* =================================================
+   GURU TKJ
+================================================= */
+
+.guru-tkj {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Guru menggunakan tampilan card siswa */
+.guru-card {
+    width: 100%;
+}
+
+/* Foto guru */
+.guru-image {
+    width: 100%;
+}
+
+/* Gambar bisa diklik */
+.guru-image img {
+    cursor: pointer;
+}
+
+
+/* =================================================
+   RESPONSIVE GURU
+================================================= */
+
+@media (max-width: 900px) {
+
+    .guru-tkj {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .guru-tkj {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
 
 /* =========================================================
    ANGGOTA KELAS
@@ -2584,4 +2635,126 @@ nav.scrolled {
         height: 28px;
         font-size: 14px;
     }
+}
+
+/* =====================================================
+   LIGHTBOX FOTO
+===================================================== */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.9);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    cursor: zoom-out;
+}
+
+
+/* Saat dibuka */
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Foto besar */
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    transform: scale(0.8);
+
+    transition: transform 0.3s ease;
+
+    cursor: default;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Animasi foto */
+
+.lightbox.active img {
+    transform: scale(1);
+}
+
+
+/* Tombol X */
+
+.lightbox-close {
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    color: white;
+
+    font-size: 45px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 2;
+
+    transition: transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.15);
+}
+
+
+/* =====================================================
+   HP
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .lightbox {
+        padding: 15px;
+    }
+
+    .lightbox img {
+        max-width: 95%;
+        max-height: 85%;
+
+        border-radius: 10px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 20px;
+
+        font-size: 38px;
+    }
+
 }
