@@ -9,7 +9,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 }
 
 :root {
@@ -1201,8 +1201,10 @@ nav.scrolled {
 
     padding: 5px 5px 20px;
 
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
+    scroll-behavior: auto;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
 
     scrollbar-width: none;
 }
@@ -1402,7 +1404,8 @@ nav.scrolled {
 
     border-radius: 35px;
 
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
+    overscroll-behavior-x: contain;
 
     -webkit-overflow-scrolling: touch;
 
@@ -2744,113 +2747,93 @@ nav.scrolled {
 }
 
 /* =========================================================================
-   OPTIMASI PERFORMA KHUSUS HP / LAYAR SENTUH
-   ---------------------------------------------------------------
-   PENTING: blok ini TIDAK menghapus / mengubah kode di atas.
-   Semua rule di sini hanya AKTIF & MENGOVERRIDE saat kondisi
-   media query terpenuhi (layar kecil / perangkat sentuh / user
-   minta reduce motion). Di desktop, semua efek asli tetap utuh.
-
-   Alasan tiap perubahan ada di komentar masing-masing.
-========================================================================= */
-
+   OPTIMASI PERFORMA MOBILE
+   -------------------------------------------------------------------------
+   Desktop mempertahankan efek visual. Touch/mobile memakai versi ringan.
+   ========================================================================= */
 @media (max-width: 768px), (pointer: coarse) {
-
-    /* -----------------------------------------------------------
-       1) NEBULA GLOW
-       filter: blur(90px) + animasi infinite = beban render
-       konstan tiap frame. Di HP: blur dikecilkan & animasi
-       loop-nya dimatikan (nebula tetap terlihat, cuma diam).
-    ----------------------------------------------------------- */
+    /* Background dekoratif: tetap terlihat, tetapi tidak terus dihitung berat. */
     .nebula-glow {
-        filter: blur(45px);
-        animation: none;
+        filter: none;
+        opacity: 0.35;
+        animation: none !important;
     }
 
-    /* -----------------------------------------------------------
-       2) STARFIELD
-       Tiap layer bintang punya ratusan box-shadow yang
-       DIGANDAKAN via ::after untuk animasi loop mulus.
-       Di HP: duplikat ::after disembunyikan (memotong jumlah
-       titik yang dirender ~separuh) dan animasi diperlambat
-       supaya repaint per detik lebih jarang.
-    ----------------------------------------------------------- */
+    .shooting-star {
+        display: none;
+        animation: none !important;
+    }
+
     #stars-small::after,
     #stars-medium::after,
     #stars-large::after {
         display: none;
     }
 
-    #stars-small {
-        animation-duration: 260s;
+    #stars-small,
+    #stars-medium,
+    #stars-large,
+    .planet {
+        animation: none !important;
     }
 
-    #stars-medium {
-        animation-duration: 220s;
-    }
-
-    #stars-large {
-        animation-duration: 200s;
-    }
-
-    /* -----------------------------------------------------------
-       3) BACKDROP-FILTER
-       backdrop-filter: blur() adalah salah satu properti CSS
-       paling berat untuk GPU HP. Ini makin parah kalau elemen
-       yang pakai backdrop-filter ada di dalam SLIDER yang
-       digeser terus-menerus (section Anggota) sambil latar
-       belakangnya (nebula & starfield) masih bergerak juga —
-       browser terpaksa menghitung ulang blur itu tiap frame,
-       inilah biang lag paling besar di area Anggota-Galeri.
-
-       Untuk kartu-kartu yang paling sering discroll/digeser
-       (anggota, guru, tabel jadwal), backdrop-filter DIMATIKAN
-       total di HP, background-nya diperkuat sedikit sebagai
-       gantinya supaya teks tetap kebaca jelas tanpa efek kaca
-       buram. Untuk elemen yang jarang bergerak (nav, footer,
-       absen), blur cukup dikecilkan saja.
-    ----------------------------------------------------------- */
-    .anggota-card,
-    .guru-card,
-    .jadwal-table {
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-
-        background: rgba(15, 18, 45, 0.92);
-    }
-
-    nav,
-    nav.scrolled,
-    .tentang-card,
-    .statistik-card,
-    .footer,
-    .absen {
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-    }
-
-    /* -----------------------------------------------------------
-       4) BACKGROUND-ATTACHMENT: FIXED
-       "fixed" pada body dengan gradient besar sering bikin
-       scroll patah-patah di HP (terutama Safari iOS) karena
-       background harus dihitung ulang tiap kali viewport
-       bergerak. "scroll" jauh lebih ringan di mobile.
-    ----------------------------------------------------------- */
     body {
         background-attachment: scroll;
     }
 
-    /* -----------------------------------------------------------
-       5) SHOOTING STAR
-       Animasi bintang jatuh yang looping terus-menerus di
-       belakang layar juga ikut disederhanakan durasinya.
-    ----------------------------------------------------------- */
-    .shooting-star {
-        animation-duration: 8s;
+    /* Hindari backdrop-filter saat scrolling touch. */
+    nav,
+    nav.scrolled,
+    .tentang-card,
+    .anggota-card,
+    .guru-card,
+    .jadwal-table,
+    .statistik-card,
+    .footer,
+    .absen,
+    .ul-navbar {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
 
-}
+    nav,
+    nav.scrolled {
+        background: rgba(6, 9, 26, 0.96);
+    }
 
+    .tentang-card,
+    .statistik-card {
+        background: rgba(15, 18, 45, 0.94);
+    }
+
+    .anggota-card,
+    .guru-card,
+    .jadwal-table {
+        background: rgba(15, 18, 45, 0.94);
+    }
+
+    .footer {
+        background: rgba(20, 8, 73, 0.94);
+    }
+
+    .absen {
+        background: rgba(30, 41, 59, 0.96);
+    }
+
+    /* Animasi hero tidak perlu berjalan saat user sedang membaca/scroll. */
+    .satelit {
+        animation: none;
+    }
+
+    .anggota-container,
+    .jadwal-container {
+        scroll-behavior: auto;
+    }
+
+    .anggota-container {
+        scroll-snap-type: none;
+    }
+}
 
 /* -----------------------------------------------------------------------
    6) HORMATI PENGATURAN "REDUCE MOTION" DI HP
