@@ -2867,3 +2867,26 @@ nav.scrolled {
         animation: none !important;
     }
 }
+
+
+/* =========================================================================
+   PAUSE ANIMASI SAAT HALAMAN TIDAK DILIHAT
+   ---------------------------------------------------------------
+   Class "page-hidden" ditambahkan/dihapus oleh JS (lewat Page
+   Visibility API) di body. Saat user pindah tab / minimize HP /
+   kunci layar, semua animasi looping berikut di-PAUSE (bukan
+   dihapus!) sehingga tidak makan CPU & baterai saat tidak
+   ada yang lihat. Begitu balik ke halaman ini, animasi lanjut
+   dari posisi terakhir, TIDAK mulai ulang dari awal.
+========================================================================= */
+
+body.page-hidden .nebula-glow,
+body.page-hidden #stars-small,
+body.page-hidden #stars-medium,
+body.page-hidden #stars-large,
+body.page-hidden .shooting-star,
+body.page-hidden .planet,
+body.page-hidden .cursor,
+body.page-hidden .satelit {
+    animation-play-state: paused !important;
+}
