@@ -162,7 +162,7 @@ body {
     height: 1px;
     background: transparent;
     box-shadow: 1309px 228px #FFF, 51px 1518px #FFF, 563px 501px #FFF, 457px 285px #FFF, 1508px 209px #FFF, 1385px 1516px #FFF, 1827px 1116px #FFF, 178px 1209px #FFF, 864px 65px #FFF, 61px 191px #FFF, 447px 476px #FFF, 1034px 1232px #FFF, 54px 1149px #FFF, 407px 1466px #FFF, 1330px 1436px #FFF, 1116px 859px #FFF, 451px 919px #FFF, 1206px 569px #FFF, 1657px 1780px #FFF, 13px 1554px #FFF, 1650px 326px #FFF, 1429px 865px #FFF, 696px 569px #FFF, 318px 440px #FFF, 1960px 1563px #FFF, 689px 209px #FFF, 189px 778px #FFF, 198px 735px #FFF, 1735px 704px #FFF, 1236px 541px #FFF, 1652px 88px #FFF, 1494px 940px #FFF, 1098px 255px #FFF, 1992px 1888px #FFF, 775px 161px #FFF, 1130px 600px #FFF, 1698px 1287px #FFF, 1266px 1813px #FFF, 1764px 740px #FFF, 1182px 393px #FFF, 1442px 142px #FFF, 93px 1354px #FFF, 466px 1583px #FFF, 592px 163px #FFF, 1751px 476px #FFF, 1774px 206px #FFF, 778px 569px #FFF, 928px 1301px #FFF, 1708px 747px #FFF, 333px 758px #FFF, 727px 429px #FFF, 1372px 546px #FFF, 1437px 1918px #FFF, 1399px 1327px #FFF, 146px 1247px #FFF, 1300px 350px #FFF, 1093px 1493px #FFF, 501px 334px #FFF, 946px 777px #FFF, 552px 1895px #FFF, 1310px 1409px #FFF, 1140px 449px #FFF, 1402px 664px #FFF, 1726px 1573px #FFF, 1589px 114px #FFF, 469px 1683px #FFF, 65px 1648px #FFF, 646px 821px #FFF, 548px 135px #FFF, 432px 1870px #FFF, 1931px 1161px #FFF, 1794px 1470px #FFF, 644px 435px #FFF, 1342px 1022px #FFF, 810px 1811px #FFF, 1872px 1316px #FFF, 939px 292px #FFF, 542px 285px #FFF, 505px 1525px #FFF, 1149px 1103px #FFF, 538px 1529px #FFF, 1197px 877px #FFF, 1838px 1195px #FFF, 817px 741px #FFF, 449px 283px #FFF, 1043px 1010px #FFF, 186px 1547px #FFF, 96px 1763px #FFF, 224px 313px #FFF, 1285px 327px #FFF, 1622px 1393px #FFF, 864px 1221px #FFF, 130px 788px #FFF, 781px 1220px #FFF, 958px 1083px #FFF, 514px 1988px #FFF, 1133px 1762px #FFF, 1930px 23px #FFF, 1393px 1476px #FFF, 234px 1396px #FFF, 1812px 1099px #FFF, 1537px 546px #FFF, 1574px 1312px #FFF, 696px 228px #FFF, 601px 890px #FFF, 323px 929px #FFF, 6px 1953px #FFF, 1478px 1793px #FFF, 1473px 539px #FFF, 1990px 1025px #FFF, 1560px 365px #FFF, 1039px 1869px #FFF, 217px 1782px #FFF, 1280px 611px #FFF, 1723px 1308px #FFF, 1039px 1247px #FFF, 407px 313px #FFF, 765px 1561px #FFF, 330px 1104px #FFF, 1952px 1594px #FFF, 1889px 1086px #FFF, 1881px 1px #FFF, 1226px 663px #FFF, 1000px 39px #FFF, 229px 1902px #FFF, 743px 1799px #FFF, 1703px 1652px #FFF, 629px 490px #FFF, 118px 493px #FFF, 1798px 1161px #FFF, 1939px 161px #FFF, 175px 1498px #FFF, 995px 1671px #FFF, 141px 1557px #FFF, 1090px 1568px #FFF, 257px 262px #FFF, 1351px 973px #FFF, 1939px 1125px #FFF, 338px 542px #FFF, 1080px 1786px #FFF, 1242px 866px #FFF, 1975px 433px #FFF, 1902px 1104px #FFF, 1546px 1494px #FFF, 1412px 411px #FFF, 1460px 638px #FFF, 817px 1375px #FFF, 1330px 764px #FFF, 897px 1842px #FFF, 1059px 924px #FFF, 247px 507px #FFF, 460px 131px #FFF, 692px 43px #FFF, 1204px 1134px #FFF, 471px 1205px #FFF, 451px 14px #FFF, 145px 1449px #FFF, 1292px 120px #FFF, 468px 138px #FFF, 1854px 64px #FFF, 1760px 676px #FFF, 145px 1052px #FFF, 487px 570px #FFF, 1370px 994px #FFF, 438px 1104px #FFF, 270px 1481px #FFF, 1915px 1807px #FFF, 1169px 1180px #FFF, 968px 497px #FFF, 1606px 968px #FFF, 1653px 833px #FFF, 389px 193px #FFF, 198px 1349px #FFF, 882px 725px #FFF, 867px 841px #FFF, 956px 1769px #FFF, 1493px 110px #FFF, 1379px 1338px #FFF, 1323px 201px #FFF, 124px 824px #FFF;
-    animation: animStarSmall 140s linear infinite;
+    animation: none;
 }
 
 #stars-small::after {
@@ -180,7 +180,7 @@ body {
     height: 2px;
     background: transparent;
     box-shadow: 1491px 694px #FFF, 1639px 1764px #FFF, 223px 509px #FFF, 392px 389px #FFF, 1098px 918px #FFF, 287px 864px #FFF, 375px 570px #FFF, 947px 511px #FFF, 1790px 1890px #FFF, 154px 907px #FFF, 1654px 1764px #FFF, 1753px 1127px #FFF, 200px 103px #FFF, 1335px 1107px #FFF, 1712px 30px #FFF, 1984px 191px #FFF, 1897px 1543px #FFF, 1738px 484px #FFF, 340px 832px #FFF, 994px 985px #FFF, 437px 1770px #FFF, 821px 1848px #FFF, 120px 337px #FFF, 776px 4px #FFF, 799px 543px #FFF, 1897px 1605px #FFF, 1607px 931px #FFF, 584px 866px #FFF, 1426px 1960px #FFF, 1496px 1604px #FFF, 1138px 1355px #FFF, 1471px 996px #FFF, 317px 388px #FFF, 607px 445px #FFF, 1983px 119px #FFF, 1186px 1506px #FFF, 1110px 124px #FFF, 1531px 642px #FFF, 117px 102px #FFF, 1196px 976px #FFF, 1029px 1882px #FFF, 1746px 1087px #FFF, 322px 116px #FFF, 1967px 1040px #FFF, 164px 1743px #FFF, 380px 140px #FFF, 1218px 139px #FFF, 1382px 1765px #FFF, 481px 826px #FFF, 245px 1928px #FFF, 1823px 1166px #FFF, 504px 1185px #FFF, 1217px 81px #FFF, 1268px 167px #FFF, 858px 1346px #FFF, 1195px 1157px #FFF, 1070px 647px #FFF, 1914px 534px #FFF, 418px 1371px #FFF, 1466px 643px #FFF, 488px 543px #FFF, 810px 268px #FFF, 1375px 1321px #FFF, 614px 936px #FFF, 647px 1902px #FFF, 1539px 1916px #FFF, 148px 19px #FFF, 938px 1272px #FFF, 1153px 204px #FFF, 150px 1101px #FFF, 436px 1036px #FFF, 543px 271px #FFF, 1911px 714px #FFF, 1804px 140px #FFF, 1800px 500px #FFF, 756px 583px #FFF, 323px 897px #FFF, 1707px 1112px #FFF, 1440px 619px #FFF, 1252px 1652px #FFF, 1339px 1083px #FFF, 16px 1367px #FFF, 1673px 1135px #FFF, 613px 1908px #FFF, 1358px 212px #FFF, 1922px 1798px #FFF, 275px 541px #FFF, 236px 1822px #FFF, 219px 1520px #FFF, 1133px 318px #FFF, 557px 577px #FFF, 1238px 431px #FFF, 1469px 702px #FFF, 416px 1407px #FFF, 1298px 1746px #FFF, 540px 1035px #FFF, 1000px 514px #FFF, 1854px 1859px #FFF, 1732px 104px #FFF, 189px 1299px #FFF;
-    animation: animStarMedium 110s linear infinite;
+    animation: none;
 }
 
 #stars-medium::after {
@@ -198,7 +198,7 @@ body {
     height: 3px;
     background: transparent;
     box-shadow: 867px 1698px #FFF, 566px 90px #FFF, 7px 683px #FFF, 1579px 267px #FFF, 1304px 536px #FFF, 330px 1518px #FFF, 904px 1129px #FFF, 1445px 875px #FFF, 1148px 19px #FFF, 229px 154px #FFF, 1935px 1808px #FFF, 1415px 1851px #FFF, 305px 1117px #FFF, 73px 1709px #FFF, 756px 1192px #FFF, 1131px 303px #FFF, 880px 261px #FFF, 85px 631px #FFF, 746px 1841px #FFF, 1910px 1630px #FFF, 1991px 1762px #FFF, 81px 1840px #FFF, 732px 430px #FFF, 1396px 511px #FFF, 1365px 210px #FFF, 724px 1597px #FFF, 1146px 1810px #FFF, 1791px 832px #FFF, 1994px 1271px #FFF, 1534px 316px #FFF, 1895px 1904px #FFF, 484px 1770px #FFF, 332px 1999px #FFF, 1638px 1660px #FFF, 362px 1805px #FFF, 844px 50px #FFF, 367px 1508px #FFF, 1893px 680px #FFF, 1602px 1906px #FFF, 843px 1642px #FFF, 1371px 1769px #FFF, 1505px 1660px #FFF, 508px 546px #FFF, 326px 1612px #FFF, 1436px 221px #FFF, 783px 1786px #FFF, 79px 1758px #FFF, 963px 455px #FFF, 408px 1672px #FFF, 1880px 942px #FFF;
-    animation: animStarLarge, animTwinkle;
+    animation: none;
     animation-duration: 80s, 4s;
     animation-timing-function: linear, ease-in-out;
     animation-iteration-count: infinite, infinite;
@@ -272,7 +272,7 @@ body {
     top: 12%;
     left: 15%;
 
-    animation: shoot 8s linear infinite;
+    animation: none;
     animation-delay: 1s;
 }
 
@@ -280,7 +280,7 @@ body {
     top: 32%;
     left: 65%;
 
-    animation: shoot 10s linear infinite;
+    animation: none;
     animation-delay: 4s;
 }
 
@@ -327,7 +327,7 @@ body {
         inset -14px -14px 26px rgba(0, 0, 0, 0.55),
         0 0 45px rgba(124, 58, 237, 0.5);
 
-    animation: planetFloat1 7s ease-in-out infinite;
+    animation: none;
 }
 
 .planet-2 {
@@ -343,7 +343,7 @@ body {
         inset -9px -9px 18px rgba(0, 0, 0, 0.55),
         0 0 32px rgba(220, 38, 38, 0.45);
 
-    animation: planetFloat2 9s ease-in-out infinite;
+    animation: none;
 }
 
 .planet-3 {
@@ -359,7 +359,7 @@ body {
         inset -7px -7px 14px rgba(0, 0, 0, 0.55),
         0 0 26px rgba(14, 165, 233, 0.45);
 
-    animation: planetFloat3 6s ease-in-out infinite;
+    animation: none;
 }
 
 /* CINCIN PLANET-3 */
@@ -2889,19 +2889,4 @@ body.page-hidden .planet,
 body.page-hidden .cursor,
 body.page-hidden .satelit {
     animation-play-state: paused !important;
-}
-
-/* =========================================================
-   NONAKTIFKAN DEKORASI RUANG ANGKASA
-   - titik-titik bintang
-   - bintang jatuh
-   - planet
-========================================================= */
-
-#stars-small,
-#stars-medium,
-#stars-large,
-.shooting-star,
-.planet {
-    display: none !important;
 }
