@@ -1668,6 +1668,41 @@
     <script>
 
         /* =====================================================
+           PAUSE ANIMASI SAAT HALAMAN TIDAK DILIHAT
+           -----------------------------------------------------
+           Page Visibility API: browser kasih tahu kita kapan
+           tab ini tidak sedang aktif dilihat (pindah tab,
+           minimize, kunci layar HP). Saat itu terjadi, class
+           "page-hidden" ditambahkan ke body, yang men-trigger
+           "animation-play-state: paused" di CSS (lihat bagian
+           akhir style.css). Animasi TIDAK dihapus, cuma
+           dijeda — begitu halaman dilihat lagi, animasi
+           lanjut dari posisi terakhir, bukan mulai ulang.
+        ====================================================== */
+
+        function handleVisibilityChange() {
+
+            if (document.hidden) {
+
+                document.body.classList.add("page-hidden");
+
+            } else {
+
+                document.body.classList.remove("page-hidden");
+
+            }
+
+        }
+
+        document.addEventListener(
+            "visibilitychange",
+            handleVisibilityChange
+        );
+
+        handleVisibilityChange();
+
+
+        /* =====================================================
            MOBILE NAVBAR TOGGLE
         ====================================================== */
 
