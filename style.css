@@ -2890,3 +2890,18 @@ body.page-hidden .cursor,
 body.page-hidden .satelit {
     animation-play-state: paused !important;
 }
+
+/* =========================================================
+   NONAKTIFKAN DEKORASI RUANG ANGKASA
+   - titik-titik bintang
+   - bintang jatuh
+   - planet
+========================================================= */
+
+#stars-small,
+#stars-medium,
+#stars-large,
+.shooting-star,
+.planet {
+    display: none !important;
+}
