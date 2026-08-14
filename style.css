@@ -2758,3 +2758,112 @@ nav.scrolled {
     }
 
 }
+
+/* =========================================================================
+   OPTIMASI PERFORMA KHUSUS HP / LAYAR SENTUH
+   ---------------------------------------------------------------
+   PENTING: blok ini TIDAK menghapus / mengubah kode di atas.
+   Semua rule di sini hanya AKTIF & MENGOVERRIDE saat kondisi
+   media query terpenuhi (layar kecil / perangkat sentuh / user
+   minta reduce motion). Di desktop, semua efek asli tetap utuh.
+
+   Alasan tiap perubahan ada di komentar masing-masing.
+========================================================================= */
+
+@media (max-width: 768px), (pointer: coarse) {
+
+    /* -----------------------------------------------------------
+       1) NEBULA GLOW
+       filter: blur(90px) + animasi infinite = beban render
+       konstan tiap frame. Di HP: blur dikecilkan & animasi
+       loop-nya dimatikan (nebula tetap terlihat, cuma diam).
+    ----------------------------------------------------------- */
+    .nebula-glow {
+        filter: blur(45px);
+        animation: none;
+    }
+
+    /* -----------------------------------------------------------
+       2) STARFIELD
+       Tiap layer bintang punya ratusan box-shadow yang
+       DIGANDAKAN via ::after untuk animasi loop mulus.
+       Di HP: duplikat ::after disembunyikan (memotong jumlah
+       titik yang dirender ~separuh) dan animasi diperlambat
+       supaya repaint per detik lebih jarang.
+    ----------------------------------------------------------- */
+    #stars-small::after,
+    #stars-medium::after,
+    #stars-large::after {
+        display: none;
+    }
+
+    #stars-small {
+        animation-duration: 260s;
+    }
+
+    #stars-medium {
+        animation-duration: 220s;
+    }
+
+    #stars-large {
+        animation-duration: 200s;
+    }
+
+    /* -----------------------------------------------------------
+       3) BACKDROP-FILTER
+       backdrop-filter: blur() adalah salah satu properti CSS
+       paling berat untuk GPU HP, apalagi pada elemen yang ikut
+       discroll (nav, card-card, tabel jadwal, footer). Radius
+       blur dikecilkan di sini supaya browser mobile tidak
+       terus-menerus menghitung ulang area di belakangnya.
+    ----------------------------------------------------------- */
+    nav,
+    nav.scrolled,
+    .tentang-card,
+    .anggota-card,
+    .jadwal-table,
+    .statistik-card,
+    .footer,
+    .absen {
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+
+    /* -----------------------------------------------------------
+       4) BACKGROUND-ATTACHMENT: FIXED
+       "fixed" pada body dengan gradient besar sering bikin
+       scroll patah-patah di HP (terutama Safari iOS) karena
+       background harus dihitung ulang tiap kali viewport
+       bergerak. "scroll" jauh lebih ringan di mobile.
+    ----------------------------------------------------------- */
+    body {
+        background-attachment: scroll;
+    }
+
+    /* -----------------------------------------------------------
+       5) SHOOTING STAR
+       Animasi bintang jatuh yang looping terus-menerus di
+       belakang layar juga ikut disederhanakan durasinya.
+    ----------------------------------------------------------- */
+    .shooting-star {
+        animation-duration: 8s;
+    }
+
+}
+
+
+/* -----------------------------------------------------------------------
+   6) HORMATI PENGATURAN "REDUCE MOTION" DI HP
+   Kalau user mengaktifkan "Kurangi Gerakan" di sistem HP-nya,
+   semua animasi dekoratif (bukan animasi fungsional seperti
+   slider) dimatikan total demi kenyamanan & performa.
+----------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .nebula-glow,
+    #stars-small,
+    #stars-medium,
+    #stars-large,
+    .shooting-star {
+        animation: none !important;
+    }
+}
