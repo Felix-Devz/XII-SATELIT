@@ -344,8 +344,8 @@
         <div class="anggota-image guru-image">
 
             <img
-                src="anggota/buika.jpeg"
-                alt="Guru TKJ"
+                src="foto/guru1.jpg"
+                alt="Guru TKJ 1"
                 onclick="openLightbox(this)"
             >
 
@@ -358,7 +358,7 @@
         <div class="anggota-info">
 
             <h2>
-                Ibu Ika N.
+                Nama Guru 1
             </h2>
 
             <p class="kelas">
@@ -366,7 +366,7 @@
             </p>
 
             <p class="status">
-                Guru TKJ / Wali Siswa
+                Guru TKJ
             </p>
 
         </div>
@@ -380,8 +380,8 @@
         <div class="anggota-image guru-image">
 
             <img
-                src="anggota/noimage.jpg"
-                alt="Guru TKJ"
+                src="foto/guru2.jpg"
+                alt="Guru TKJ 2"
                 onclick="openLightbox(this)"
             >
 
@@ -394,7 +394,7 @@
         <div class="anggota-info">
 
             <h2>
-                Pak Tri
+                Nama Guru 2
             </h2>
 
             <p class="kelas">
@@ -416,8 +416,8 @@
         <div class="anggota-image guru-image">
 
             <img
-                src="anggota/noimage.jpg"
-                alt="Guru TKJ"
+                src="foto/guru3.jpg"
+                alt="Guru TKJ 3"
                 onclick="openLightbox(this)"
             >
 
@@ -430,7 +430,7 @@
         <div class="anggota-info">
 
             <h2>
-                Pak Satria
+                Nama Guru 3
             </h2>
 
             <p class="kelas">
@@ -1789,10 +1789,47 @@
         }
 
 
-        window.addEventListener(
-            "scroll",
-            updateActiveNavbar
-        );
+        /* =====================================================
+           SCROLL THROTTLE (requestAnimationFrame)
+           -----------------------------------------------------
+           Event "scroll" bisa nembak puluhan kali per detik.
+           Tanpa throttle, kerja berat (baca offsetTop, toggle
+           class yang memicu backdrop-filter dihitung ulang)
+           numpuk di satu waktu dan bikin HP nge-freeze sesaat.
+           Helper ini memastikan fungsi hanya dijalankan MAKSIMAL
+           sekali per frame render (~60x/detik), bukan setiap
+           event scroll individual. Fungsi aslinya tidak diubah.
+        ====================================================== */
+
+        function onScrollThrottled(callback) {
+
+            let ticking = false;
+
+            window.addEventListener(
+                "scroll",
+                () => {
+
+                    if (!ticking) {
+
+                        window.requestAnimationFrame(() => {
+
+                            callback();
+                            ticking = false;
+
+                        });
+
+                        ticking = true;
+
+                    }
+
+                },
+                { passive: true }
+            );
+
+        }
+
+
+        onScrollThrottled(updateActiveNavbar);
 
         updateActiveNavbar();
 
@@ -1805,22 +1842,19 @@
             document.querySelector(".navbar");
 
 
-        window.addEventListener(
-            "scroll",
-            () => {
+        onScrollThrottled(() => {
 
-                if (window.scrollY > 50) {
+            if (window.scrollY > 50) {
 
-                    navbar.classList.add("scrolled");
+                navbar.classList.add("scrolled");
 
-                } else {
+            } else {
 
-                    navbar.classList.remove("scrolled");
-
-                }
+                navbar.classList.remove("scrolled");
 
             }
-        );
+
+        });
 
 
         /* =====================================================
